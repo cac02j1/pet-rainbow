@@ -1,0 +1,12 @@
+--[[
+ .____                  ________ ___.    _____                           __                
+ |    |    __ _______   \_____  \\_ |___/ ____\_ __  ______ ____ _____ _/  |_  ___________ 
+ |    |   |  |  \__  \   /   |   \| __ \   __\  |  \/  ___// ___\\__  \\   __\/  _ \_  __ \
+ |    |___|  |  // __ \_/    |    \ \_\ \  | |  |  /\___ \\  \___ / __ \|  | (  <_> )  | \/
+ |_______ \____/(____  /\_______  /___  /__| |____//____  >\___  >____  /__|  \____/|__|   
+         \/          \/         \/    \/                \/     \/     \/                   
+          \_Welcome to LuaObfuscator.com   (Alpha 0.10.9) ~  Much Love, Ferib 
+
+]]--
+
+local v0=game:GetService("Players");local v1=game:GetService("TweenService");local v2=v0.LocalPlayer;local v3=v2:WaitForChild("Backpack");local v4=v2.Character or v2.CharacterAdded:Wait() ;local v5=Instance.new("ScreenGui",v2:WaitForChild("PlayerGui"));v5.Name="RainBowMouti";v5.ResetOnSpawn=false;local v8=Instance.new("Frame",v5);v8.Size=UDim2.new(0,160,0,50);v8.Position=UDim2.new(0,100,0,200);v8.BackgroundColor3=Color3.new(1,1,1);v8.Active=true;v8.Draggable=true;local v14=Instance.new("UICorner",v8);v14.CornerRadius=UDim.new(0,12);local v16=Instance.new("UIStroke",v8);v16.Thickness=3;v16.ApplyStrokeMode=Enum.ApplyStrokeMode.Border;v16.LineJoinMode=Enum.LineJoinMode.Round;v16.Color=Color3.fromRGB(255,0,0);coroutine.wrap(function() while true do local v40=Color3.fromHSV((tick() * 0.3)%1 ,1,1);local v41=v1:Create(v16,TweenInfo.new(1,Enum.EasingStyle.Linear),{Color=v40});v41:Play();v41.Completed:Wait();end end)();local v23=Instance.new("TextLabel",v8);v23.Size=UDim2.new(1,0,1,0);v23.BackgroundTransparency=1;v23.Text="🌈 RainBow Mouti";v23.TextColor3=Color3.new(0,0,0);v23.Font=Enum.Font.GothamBold;v23.TextSize=16;local function v31(v37) return Color3.fromHSV(((tick() + v37)%5)/5 ,1,1);end local v32=false;local v33=nil;local function v34(v38) if (v32 or  not v38 or  not v38:IsA("Tool")) then return;end v32=true;v33=v38;coroutine.wrap(function() while v33 and (v33.Parent==v2.Character)  do local v43=v31(0);for v44,v45 in pairs(v33:GetDescendants()) do if v45:IsA("BasePart") then local v46=v1:Create(v45,TweenInfo.new(1.5),{Color=v43});v46:Play();end end task.wait(1.5);end v32=false;end)();end local function v35(v39) v34(v39);end local function v36() while true do v4=v2.Character or v2.CharacterAdded:Wait() ;local v42=v4:FindFirstChildOfClass("Tool");if v42 then v35(v42);end task.wait(0.5);end end task.spawn(v36);
